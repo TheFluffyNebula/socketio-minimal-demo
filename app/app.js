@@ -4,7 +4,9 @@
 const socketURL = 'wss://deploy-socketio-minimal-demo.onrender.com/';
 console.log('Connecting to', socketURL);
 
-const socket = io(socketURL);
+const socket = io(socketURL, {
+    transports: ['websocket']
+ });
 socket.on('connect', () => {
     console.log('Connected to socket server');
 });
