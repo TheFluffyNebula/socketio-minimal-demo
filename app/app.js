@@ -1,6 +1,7 @@
 // const socket = io('ws://localhost:8080');
 // Check if the hostname is localhost or a specific domain
-const socketURL = window.location.hostname === 'localhost' ? 'ws://localhost:8080' : `wss://https://deploy-socketio-minimal-demo.onrender.com/`;
+const socketURL = window.location.hostname === 'localhost' ? 'ws://localhost:8080' : `wss://deploy-socketio-minimal-demo.onrender.com/`;
+// const socketURL = 'wss://https://deploy-socketio-minimal-demo.onrender.com/';
 const socket = io(socketURL);
 
 socket.on('message', text => {
