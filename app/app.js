@@ -5,6 +5,12 @@ const socketURL = 'wss://https://deploy-socketio-minimal-demo.onrender.com/';
 console.log('Connecting to', socketURL);
 
 const socket = io(socketURL);
+socket.on('connect', () => {
+    console.log('Connected to socket server');
+});
+socket.on('connect_error', (error) => {
+    console.error('Connection Error:', error);
+});
 
 socket.on('message', text => {
 
