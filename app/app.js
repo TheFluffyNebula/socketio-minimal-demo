@@ -1,4 +1,7 @@
-const socket = io('ws://localhost:8080');
+// const socket = io('ws://localhost:8080');
+// Check if the hostname is localhost or a specific domain
+const socketURL = window.location.hostname === 'localhost' ? 'ws://localhost:8080' : `wss://${window.location.hostname}:${window.location.port || '8080'}`;
+const socket = io(socketURL);
 
 socket.on('message', text => {
 
