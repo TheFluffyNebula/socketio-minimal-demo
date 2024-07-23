@@ -13,9 +13,11 @@ io.on('connection', (socket) => {
 });
 
 // http.listen(8080, () => console.log('listening on http://localhost:8080') );
+// http.listen(PORT, () => console.log(`listening on http://localhost:${PORT}`));
 // Use the PORT environment variable if it exists, otherwise default to 8080
 const PORT = process.env.PORT || 8080;
-http.listen(PORT, () => console.log(`listening on http://localhost:${PORT}`));
+http.listen(PORT, '0.0.0.0', () => console.log(`listening on http://0.0.0.0:${PORT}`));
+
 
 // Regular Websockets
 
