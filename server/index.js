@@ -1,4 +1,9 @@
-const server = require('http').createServer();
+const http = require('http');
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Socket.IO server running\n');
+});
+// const server = require('http').createServer();
 const io = require('socket.io')(server, {
     cors: { origin: "*" }
 });
