@@ -1,4 +1,5 @@
 const http = require('http').createServer();
+const server = http.createServer();
 const io = require('socket.io')(http, {
     cors: { origin: "*" }
 });
@@ -16,7 +17,7 @@ io.on('connection', (socket) => {
 // http.listen(PORT, () => console.log(`listening on http://localhost:${PORT}`));
 // Use the PORT environment variable if it exists, otherwise default to 8080
 const PORT = process.env.PORT || 8080;
-http.listen(PORT, '0.0.0.0', () => console.log(`listening on http://0.0.0.0:${PORT}`));
+server.listen(PORT, '0.0.0.0', () => console.log(`listening on http://0.0.0.0:${PORT}`));
 
 
 // Regular Websockets
